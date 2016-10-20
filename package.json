@@ -1,0 +1,26 @@
+{
+  "name": "week11-hangman",
+  "version": "1.0.0",
+  "description": "console-based hangman application using constructors and objects",
+  "main": "main.js",
+  "dependencies": {
+    "inquirer": "^1.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmankey/Week11-Hangman.git"
+  },
+  "keywords": [
+    "hangman"
+  ],
+  "author": "Cohra Mankey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmankey/Week11-Hangman/issues"
+  },
+  "homepage": "https://github.com/cmankey/Week11-Hangman#readme"
+}
