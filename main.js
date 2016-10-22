@@ -42,7 +42,10 @@ function play() {
             var charEntered = answer.charEntered.toLowerCase();
             if (isCharNewLetter(charEntered)) {
                 lettersGuessed.push(charEntered);
-                remainingGuesses = word.checkLetter(charEntered, remainingGuesses);    
+                var hasLetter = word.checkLetter(charEntered);
+                if (!hasLetter) {
+                    remainingGuesses--;
+                }
             }
             play()
         });

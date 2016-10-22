@@ -15,7 +15,7 @@ var Word = function (word) {
             this.displayArray.push(this.lettersArray[i].display);
         }
     }
-    this.checkLetter = function (charEntered, remainingGuesses) {
+    this.checkLetter = function (charEntered) {
         if (this.wordArray.indexOf(charEntered) >= 0) {
             for (i = 0; i < this.wordArray.length; i++) {
                 if (this.wordArray[i] == charEntered) {
@@ -23,9 +23,9 @@ var Word = function (word) {
                 } 
             }
         } else {
-            remainingGuesses --;
+            return false;
         }
-        return remainingGuesses;
+        return true;
     }
     this.buildLettersArray();
 }
