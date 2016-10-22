@@ -10,13 +10,17 @@ var word = new Word(game);
 function isCharNewLetter(charEntered) {
     var charCode = charEntered.charCodeAt(0);
     if (charEntered.length  > 1) {
-        console.log('\nEnter only one letter at a time, please.');
+        console.log('\nEnter one letter at a time, please.');
+        return(false);
     } else if (charEntered.length = 0) {
         console.log('\nPlease enter a letter.');
+        return(false);
     } else if (!(charCode > 96 && charCode < 123)) {
         console.log('\nThat isn\'t a letter.')
+        return(false);
     }  else if (lettersGuessed.indexOf(charEntered) >= 0) {
         console.log('\nYou already guessed that letter.');
+        return(false);
     } else {
         return(true);
     }
@@ -35,7 +39,7 @@ function play() {
             name: 'charEntered',
             message: 'Guess a letter.'
         }]).then(function (answer) {
-            var charEntered = answer.charEntered;
+            var charEntered = answer.charEntered.toLowerCase();
             if (isCharNewLetter(charEntered)) {
                 lettersGuessed.push(charEntered);
                 remainingGuesses = word.checkLetter(charEntered, remainingGuesses);    
