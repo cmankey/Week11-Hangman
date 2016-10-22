@@ -15,13 +15,19 @@ var Word = function (word) {
             this.displayArray.push(this.lettersArray[i].display);
         }
     }
-    this.checkLetter = function (letter) {
-        for (i = 0; i < this.wordArray.length; i++) {
-            if (this.wordArray[i] == letter) {
-                this.lettersArray[i].displayLetter();
-            } 
+    this.checkLetter = function (charEntered, remainingGuesses) {
+        if (this.wordArray.indexOf(charEntered) >= 0) {
+            for (i = 0; i < this.wordArray.length; i++) {
+                if (this.wordArray[i] == charEntered) {
+                    this.lettersArray[i].displayLetter();
+                } 
+            }
+        } else {
+            remainingGuesses --;
         }
+        return remainingGuesses;
     }
+    this.buildLettersArray();
 }
 
 module.exports = Word;
